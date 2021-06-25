@@ -12,7 +12,7 @@ pipeline {
     stage('Maven Package'){
 		  steps {
         echo "Invoking the maven Build"
-        sh "mvnw -B -DskipTests clean package"
+        sh "mvn -B -DskipTests clean package"
 		  }
     }
       stage('Code Scan with scantist'){
