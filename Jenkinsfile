@@ -1,4 +1,4 @@
-@Library('ezlservicelayer-shared-lib') _
+
 pipeline {
   agent  { label 'ezlink' }
   tools { 
