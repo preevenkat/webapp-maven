@@ -1,0 +1,10 @@
+pipeline {
+
+
+  stages {  
+    stage('print'){
+		  steps {
+        echo "Invoking the maven Build"
+		  }
+    }
+  }
