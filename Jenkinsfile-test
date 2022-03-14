@@ -3,8 +3,9 @@ pipeline {
 
   stages {  
     stage('print'){
-		  steps {
-        echo "Invoking the maven Build"
-		  }
+	steps {
+        	echo "Invoking the maven Build"
+	}	
     }
   }
+}
