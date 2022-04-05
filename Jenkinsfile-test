@@ -1,11 +1,21 @@
+@Library('ca-library') _
 pipeline {
-
-
-  stages {  
-    stage('print'){
-	steps {
-        	echo "Invoking the maven Build"
-	}	
+    agent any
+    environment{
+      docker_repo="preevenkatezl/webapp"
+      vm_username="rajnish@JenkinsVM"
+      applicationName = "webapp"
+      hostname="172.17.0.5"
     }
+
+    stages {
+        stage('checkout code'){
+          steps{
+                gitCheckout(
+                    branch: "master",
+                    url: "git@github.com:preevenkat/webapp-mysql.git",
+                    credentialsId: "preevenkat-github-jenkins-ssh")
+          }
+        }
+     }
   }
-}
